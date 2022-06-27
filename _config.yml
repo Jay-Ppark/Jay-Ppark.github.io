@@ -103,7 +103,7 @@ analytics:
 # Site Author
 author:
   name             : "JaeHyung"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/avat.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Just Do It"
   location         : "Republic of Korea"
   email            : "godjaehyung@gmail.com"
