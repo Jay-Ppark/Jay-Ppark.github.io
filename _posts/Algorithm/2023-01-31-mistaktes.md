@@ -26,8 +26,8 @@ int main(void){
     func(t);
     cout<<t; // 0
 }
-```
-* 값이 복사되어 넘어가서 변하지 않음  
+// 값이 복사되어 넘어가서 변하지 않음.
+``` 
 ```cpp
 #include<iostream>
 using namespace std;
@@ -39,8 +39,8 @@ int main(void){
     func(arr);
     cout<<arr[0]; // 10
 }
+// arr의 주소를 넘겨줌
 ```
-* arr의 주소를 넘겨줌  
 ```cpp
 #include<iostream>
 using namespace std;
@@ -55,9 +55,10 @@ int main(void){
     func(tmp);
     cout<<tmp.x; // 0
 }
+// 값이 다 복사되기 때문에 영향을 주지 않음
 ```
-* 값이 다 복사되기 떄문에 영향을 주지 않음  
 ### 참조자(Reference)  
+* 참조자를 쓰면 원본을 바꿈  
 ```cpp
 void swap(int* a,int* b){
     int tmp = *a;
@@ -69,9 +70,10 @@ void swap(int& a,int& b){
     a=b;
     b=tmp;
 }
+// 참조자를 쓰면 원본을 바꿈
 ```
-* 참조자를 쓰면 원본을 바꿈  
-### STL vector  
+### STL vector
+* STL도 구조체와 비슷하게 함수 인자로 보내면 복사본을 보내기 때문에 원본에 영향을 주지 않음    
 ``` cpp
 #include<iostream>
 #include<vector>
@@ -85,20 +87,23 @@ int main(void){
     cout<<v[10]; // 0
     return 0;
 }
+// STL도 구조체와 비슷하게 함수 인자로 보내면 복사본을 보내기 때문에 원본에 영향을 주지 않음
 ```
-* STL도 구조체와 비슷하게 함수 인자로 보내면 복사본을 보내기 때문에 원본에 영향을 주지 않음  
+### comp함수(sort)  
+* 시간복잡도: O(N)  
 ```cpp
 bool cmp1(vector<int> v1,vector<int> v2,int idx){
     return v1[idx]>v2[idx];
 }
-```
-* 시간복잡도 O(N) v1,v2를 복사하기 때문에  
+// 시간복잡도 O(N) v1,v2를 복사하기 때문에
+``` 
+* 시간복잡도: O(1)  
 ```cpp
 bool cmp2(vector<int>& v1,vector<int>&& v2,int idx){
     return v1[idx]>v2[idx];
 }
+// 시간복잡도 O(1) 참조대상의 주소 정보만 넘어가기 때문에
 ```
-* 시간복잡도 O(1) 참조대상의 주소 정보만 넘어가기 때문에  
 ## 표준 입출력  
 * 공백을 포함한 문자열 입력  
 ```cpp
